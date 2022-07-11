@@ -15,4 +15,3 @@ router.get('/', (req, res) => {
 
 // Экспортируем наружу обьект роутер
 module.exports = router
-
