@@ -1,12 +1,25 @@
 const {Router} = require('express')
+const { empty } = require('uuidv4')
+const Course = require('../models/courses')
 const router = Router ()
 
-router.get('/', (req, res) => {    
+router.get('/', async (req, res) => {    
+    const courses = await Course.getAll()
     res.render('courses', {
         title: 'Courses',
-        isCourses: true
+        isCourses: true,
+        courses
     })
 })
 
+router.get('/:id', async (req, res) => {    
+    const course = await Course.getById(req.params.id)
+
+    res.render('course', {
+        layout: 'empty',
+        title: `Course ${course.title}`,
+        course
+    })
+})
 
 module.exports = router
