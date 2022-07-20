@@ -25,6 +25,7 @@ class Card {
             card.courses.push(course)
         }
 
+    console.log(course.price);
         card.price += +course.price
 
         return new Promise((resolve, reject) => {
