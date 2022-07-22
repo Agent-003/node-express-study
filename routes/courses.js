@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const { empty } = require('uuidv4')
-const Course = require('../models/courses')
+const Course = require('../models/course')
 const router = Router()
 
 router.get('/', async (req, res) => {
